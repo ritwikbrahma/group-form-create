@@ -1,0 +1,11 @@
+<div class="form-group">
+  <h4>Invites</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let employee of employees$ | async">
+       {{employee.name}}
+    </li>
+  </ul>
+</div>
