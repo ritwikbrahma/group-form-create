@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OnChanges } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -28,6 +29,22 @@ export class EmployeeSearchComponent implements OnInit {
   search(term: string): void {
     this.searchTerms.next(term);
   }
+
+  temp: string = null;
+  flag: boolean= true;
+  selectEmployee(employ:employee): void{
+    //this.temp.concat(this.temp,employ.name);
+    if(this.flag==true)
+    {
+      this.temp="";
+      this.flag=false;
+    }
+    
+    this.temp =this.temp + employ.name + ";";
+    console.log(this.temp);
+
+  }
+
 
   ngOnInit(): void {
     this.employees$ = this.searchTerms.pipe(

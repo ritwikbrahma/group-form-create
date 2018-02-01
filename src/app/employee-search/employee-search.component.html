@@ -1,11 +1,25 @@
 <div class="form-group">
-  <h4>Invites</h4>
+  <h4>Search to add</h4>
 
-  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <input class="form-control" [(ngModel)]="temp" #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <!--input [(ngModel)]="temp" placeholder="name"-->
 
-  <ul class="search-result">
-    <li *ngFor="let employee of employees$ | async">
-       {{employee.name}}
+</div>
+
+<div class="form-group">
+  <label><i>Tags</i></label>
+  <br>
+  <ul>
+    <li *ngFor="let employee of employees$ | async" (click)="selectEmployee(employee)">
+     {{employee.name}}
     </li>
   </ul>
 </div>
+
+    
+    
+
+
+ 
+  
+

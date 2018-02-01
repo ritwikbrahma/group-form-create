@@ -9,7 +9,7 @@ import { Group } from '../group';
 })
 export class GroupFormComponent implements OnInit {
 
-  model = new Group('TEKThak','Lets discuss','everybody');
+  model = new Group('','','');
 
   submitted = false;
 
@@ -17,6 +17,7 @@ export class GroupFormComponent implements OnInit {
   {
     this.submitted = true;
   }
+
 
 
 
